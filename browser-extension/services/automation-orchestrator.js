@@ -309,7 +309,8 @@ class SwiggyAutomator {
           nativeInputValueSetter.call(searchInput, query);
           
           searchInput.dispatchEvent(new Event('input', { bubbles: true }));
-          searchInput.dispatchEvent(new Event('change', { bubbles: true }));
+          searchI
+          nput.dispatchEvent(new Event('change', { bubbles: true }));
           searchInput.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
           searchInput.dispatchEvent(new KeyboardEvent('keyup', { key: 'Enter', bubbles: true }));
           
