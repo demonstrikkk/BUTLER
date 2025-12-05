@@ -1,0 +1,34 @@
+# Environment
+.env
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data
+data/users/*.json
+data/cache/*.json
+
+# Logs
+*.log
+
+# Screenshots
+screenshots/
+*.png
+*.jpg
+
+# Browser
+geckodriver.log
+chromedriver.log

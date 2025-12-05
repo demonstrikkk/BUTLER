@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUTLER</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <span class="emoji">🍔</span>
+        <h1>BUTLER</h1>
+      </div>
+      <div class="status-indicator">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">Initializing...</span>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <button class="action-btn primary" id="openSidePanel">
+        <span class="btn-icon">💬</span>
+        <span>Open Chat</span>
+      </button>
+      <button class="action-btn" id="quickSearch">
+        <span class="btn-icon">🔍</span>
+        <span>Quick Search</span>
+      </button>
+      <button class="action-btn" id="comparePrices">
+        <span class="btn-icon">📊</span>
+        <span>Compare</span>
+      </button>
+    </div>
+
+    <!-- Current Platform Info -->
+    <div class="platform-info" id="platformInfo">
+      <div class="platform-header">
+        <span class="platform-icon" id="platformIcon">🌐</span>
+        <span class="platform-name" id="platformName">No platform detected</span>
+      </div>
+      <div class="platform-actions" id="platformActions" style="display: none;">
+        <button class="mini-btn" id="extractItems">Extract Items</button>
+        <button class="mini-btn" id="analyzeReviews">Analyze Reviews</button>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="savedAmount">₹0</div>
+        <div class="stat-label">Saved This Month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="ordersCount">0</div>
+        <div class="stat-label">Orders Tracked</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button class="settings-btn" id="openSettings">
+        <span>⚙️</span>
+        <span>Settings</span>
+      </button>
+      <button class="help-btn" id="openHelp">
+        <span>❓</span>
+        <span>Help</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUTLER Extension Test Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #4A90E2 0%, #F5E6D3 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #4A90E2;
+      margin-bottom: 10px;
+      font-size: 2.5em;
+      text-align: center;
+    }
+
+    .subtitle {
+      color: #666;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.1em;
+    }
+
+    .status-card {
+      background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+      border-left: 4px solid #4CAF50;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .status-card h2 {
+      color: #2E7D32;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .status-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .status-card li {
+      padding: 8px 0;
+      color: #1B5E20;
+      font-size: 1.05em;
+    }
+
+    .status-card li:before {
+      content: "✅ ";
+      margin-right: 8px;
+    }
+
+    .test-section {
+      margin: 30px 0;
+    }
+
+    .test-section h3 {
+      color: #4A90E2;
+      margin-bottom: 15px;
+      font-size: 1.4em;
+      border-bottom: 2px solid #F5E6D3;
+      padding-bottom: 10px;
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .test-button {
+      background: linear-gradient(135deg, #4A90E2 0%, #5CA3E8 100%);
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    }
+
+    .test-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+    }
+
+    .test-button:active {
+      transform: translateY(0);
+    }
+
+    .instructions {
+      background: #FFF9C4;
+      border-left: 4px solid #FBC02D;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .instructions h3 {
+      color: #F57F17;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .instructions ol {
+      margin-left: 20px;
+      color: #827717;
+    }
+
+    .instructions li {
+      padding: 5px 0;
+      line-height: 1.6;
+    }
+
+    .info-box {
+      background: #E3F2FD;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .info-box p {
+      color: #1565C0;
+      margin: 5px 0;
+      line-height: 1.6;
+    }
+
+    .emoji {
+      font-size: 2em;
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    code {
+      background: #f5f5f5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍔 BUTLER Extension Test</h1>
+    <p class="subtitle">Test all features of your AI food ordering assistant</p>
+
+    <div class="status-card">
+      <h2>✅ Extension Fixed & Ready!</h2>
+      <ul>
+        <li>Side panel opens correctly</li>
+        <li>All buttons work without closing browser</li>
+        <li>Tab switching implemented</li>
+        <li>Error handling added</li>
+        <li>Platform detection active</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h3>🎯 Step 1: Reload Extension</h3>
+      <div class="info-box">
+        <p><strong>Go to:</strong> <code>chrome://extensions/</code></p>
+        <p><strong>Find:</strong> BUTLER - AI Food Ordering Assistant</p>
+        <p><strong>Click:</strong> 🔄 Reload button</p>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h3>🧪 Step 2: Test Popup Buttons</h3>
+      <p style="color: #666; margin-bottom: 15px;">Click the BUTLER icon in your toolbar and try these buttons:</p>
+      <div class="test-grid">
+        <button class="test-button" onclick="testPopup('Open Chat')">
+          💬 Open Chat
+        </button>
+        <button class="test-button" onclick="testPopup('Quick Search')">
+          🔍 Quick Search
+        </button>
+        <button class="test-button" onclick="testPopup('Compare Prices')">
+          📊 Compare
+        </button>
+        <button class="test-button" onclick="testPopup('Settings')">
+          ⚙️ Settings
+        </button>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h3>🌐 Step 3: Test Platform Detection</h3>
+      <p style="color: #666; margin-bottom: 15px;">Visit these sites to test platform detection:</p>
+      <div class="test-grid">
+        <button class="test-button" onclick="window.open('https://www.swiggy.com', '_blank')">
+          🍕 Open Swiggy
+        </button>
+        <button class="test-button" onclick="window.open('https://www.zomato.com', '_blank')">
+          🍔 Open Zomato
+        </button>
+        <button class="test-button" onclick="window.open('https://blinkit.com', '_blank')">
+          🛒 Open Blinkit
+        </button>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h3>📋 Testing Checklist</h3>
+      <ol>
+        <li><strong>Reload extension</strong> at <code>chrome://extensions/</code></li>
+        <li><strong>Click BUTLER icon</strong> - Popup should open</li>
+        <li><strong>Click "Open Chat"</strong> - Side panel opens (browser doesn't close)</li>
+        <li><strong>Try all tabs</strong> in side panel (Chat, Search, Compare, History)</li>
+        <li><strong>Visit Swiggy.com</strong> - Platform should be detected in popup</li>
+        <li><strong>Click "Extract Items"</strong> - Should attempt data extraction</li>
+        <li><strong>Configure API key</strong> in Settings for full functionality</li>
+      </ol>
+    </div>
+
+    <div class="info-box" style="margin-top: 30px;">
+      <p><strong>🔑 Next Step:</strong> Get your FREE Gemini API key</p>
+      <p>Visit: <a href="https://makersuite.google.com/app/apikey" target="_blank" style="color: #2196F3;">https://makersuite.google.com/app/apikey</a></p>
+      <p>Then add it in: BUTLER → Settings → Gemini API Key</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; color: #999;">
+      <p>BUTLER v1.0.0 | Built with ❤️ for Food Lovers</p>
+      <p style="margin-top: 10px;">
+        <span class="emoji">🍕</span>
+        <span class="emoji">🍔</span>
+        <span class="emoji">🍜</span>
+        <span class="emoji">🍰</span>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function testPopup(buttonName) {
+      alert(`✅ Test Simulation\n\nYou would click the "${buttonName}" button in the BUTLER popup.\n\nActual test: Click the BUTLER icon in your Chrome toolbar and try the real button!`);
+    }
+
+    // Check if extension is loaded
+    setTimeout(() => {
+      console.log('🍔 BUTLER Test Page Loaded');
+      console.log('📝 To test extension:');
+      console.log('1. Click BUTLER icon in toolbar');
+      console.log('2. Try all popup buttons');
+      console.log('3. Open side panel');
+      console.log('4. Visit food delivery sites');
+    }, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUTLER Chat</title>
+  <link rel="stylesheet" href="styles/sidepanel.css">
+</head>
+<body>
+  <div class="sidepanel-container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="emoji">🍔</span>
+          <h1>BUTLER AI</h1>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="refreshBtn" title="Refresh">🔄</button>
+          <button class="icon-btn" id="settingsBtn" title="Settings">⚙️</button>
+        </div>
+      </div>
+      
+      <!-- Active Platform Indicator -->
+      <div class="active-platform" id="activePlatform">
+        <span class="platform-indicator" id="platformIndicator">🌐</span>
+        <span class="platform-text" id="platformText">Ready to help!</span>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="chat">
+        <span>💬</span>
+        <span>Chat</span>
+      </button>
+      <button class="tab-btn" data-tab="search">
+        <span>🔍</span>
+        <span>Search</span>
+      </button>
+      <button class="tab-btn" data-tab="compare">
+        <span>📊</span>
+        <span>Compare</span>
+      </button>
+      <button class="tab-btn" data-tab="history">
+        <span>📜</span>
+        <span>History</span>
+      </button>
+    </div>
+
+    <!-- Chat Tab -->
+    <div class="tab-content active" id="chatTab">
+      <div class="chat-messages" id="chatMessages">
+        <div class="welcome-message">
+          <div class="welcome-icon">🍕</div>
+          <h2>Welcome to BUTLER!</h2>
+          <p>I'm your AI food ordering assistant. I can help you:</p>
+          <ul>
+            <li>🔍 Search for restaurants and dishes</li>
+            <li>📊 Compare prices across platforms</li>
+            <li>⭐ Analyze reviews and ratings</li>
+            <li>🤖 Automate your food orders</li>
+          </ul>
+          <p class="welcome-hint">Try: "Find best biryani near me" or "Compare pizza prices"</p>
+        </div>
+      </div>
+      
+      <div class="chat-input-container">
+        <div class="suggestions" id="suggestions">
+          <button class="suggestion-chip">🍕 Find pizza deals</button>
+          <button class="suggestion-chip">🍔 Compare burgers</button>
+          <button class="suggestion-chip">🍜 Best rated noodles</button>
+        </div>
+        <div class="input-wrapper">
+          <textarea 
+            id="chatInput" 
+            placeholder="Ask me anything about food ordering..."
+            rows="1"
+          ></textarea>
+          <button class="send-btn" id="sendBtn">
+            <span>🚀</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Tab -->
+    <div class="tab-content" id="searchTab">
+      <div class="search-container">
+        <div class="search-header">
+          <h2>🔍 Smart Search</h2>
+          <p>Search across all platforms simultaneously</p>
+        </div>
+        
+        <div class="search-form">
+          <input 
+            type="text" 
+            id="searchQuery" 
+            placeholder="e.g., Chicken Biryani, Margherita Pizza..."
+            class="search-input"
+          />
+          
+          <div class="platform-selector">
+            <label class="platform-checkbox">
+              <input type="checkbox" value="swiggy" checked>
+              <span class="platform-label">
+                <span class="platform-badge swiggy">Swiggy</span>
+              </span>
+            </label>
+            <label class="platform-checkbox">
+              <input type="checkbox" value="zomato" checked>
+              <span class="platform-label">
+                <span class="platform-badge zomato">Zomato</span>
+              </span>
+            </label>
+            <label class="platform-checkbox">
+              <input type="checkbox" value="blinkit" checked>
+              <span class="platform-label">
+                <span class="platform-badge blinkit">Blinkit</span>
+              </span>
+            </label>
+          </div>
+          
+          <button class="search-btn" id="executeSearch">
+            <span>🔍</span>
+            <span>Search All Platforms</span>
+          </button>
+        </div>
+        
+        <div class="search-results" id="searchResults">
+          <!-- Results will be populated here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Compare Tab -->
+    <div class="tab-content" id="compareTab">
+      <div class="compare-container">
+        <div class="compare-header">
+          <h2>📊 Price Comparison</h2>
+          <p>Compare the same item across platforms</p>
+        </div>
+        
+        <div class="comparison-results" id="comparisonResults">
+          <div class="empty-state">
+            <div class="empty-icon">📊</div>
+            <p>No comparisons yet</p>
+            <p class="empty-hint">Search for items to compare prices</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- History Tab -->
+    <div class="tab-content" id="historyTab">
+      <div class="history-container">
+        <div class="history-header">
+          <h2>📜 Order History</h2>
+          <button class="clear-history-btn" id="clearHistory">Clear All</button>
+        </div>
+        
+        <div class="history-list" id="historyList">
+          <div class="empty-state">
+            <div class="empty-icon">📜</div>
+            <p>No order history yet</p>
+            <p class="empty-hint">Your tracked orders will appear here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

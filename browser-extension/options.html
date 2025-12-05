@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUTLER Settings</title>
+  <link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <div class="header-content">
+        <h1>🍔 BUTLER Settings</h1>
+        <p>Configure your AI food ordering assistant</p>
+      </div>
+    </header>
+
+    <main class="options-main">
+      <section class="settings-section">
+        <h2>🔑 API Configuration</h2>
+        <div class="setting-item">
+          <label for="apiKey">Gemini API Key</label>
+          <input type="password" id="apiKey" placeholder="Enter your Gemini API key">
+          <p class="setting-hint">
+            Get your free API key from <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>
+          </p>
+          <button class="test-btn" id="testApiKey">Test Connection</button>
+          <div id="apiStatus" class="status-message"></div>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>👤 User Preferences</h2>
+        
+        <div class="setting-item">
+          <label for="location">Delivery Location</label>
+          <input type="text" id="location" placeholder="e.g., Rohini Sector 11, Delhi">
+        </div>
+
+        <div class="setting-item">
+          <label for="dietary">Dietary Preference</label>
+          <select id="dietary">
+            <option value="none">No Restriction</option>
+            <option value="veg">Vegetarian</option>
+            <option value="eggitarian">Eggitarian</option>
+            <option value="non-veg">Non-Vegetarian</option>
+            <option value="vegan">Vegan</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <label for="spiceLevel">Spice Level</label>
+          <select id="spiceLevel">
+            <option value="mild">Mild</option>
+            <option value="medium">Medium</option>
+            <option value="hot">Hot</option>
+            <option value="extra-hot">Extra Hot</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <label>Budget Range (₹)</label>
+          <div class="budget-inputs">
+            <input type="number" id="budgetMin" placeholder="Min" value="0">
+            <span>to</span>
+            <input type="number" id="budgetMax" placeholder="Max" value="2000">
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>⚙️ Automation Settings</h2>
+        
+        <div class="setting-item checkbox-item">
+          <input type="checkbox" id="enableAutomation" checked>
+          <label for="enableAutomation">
+            Enable Browser Automation
+            <span class="setting-hint">Allow BUTLER to automate ordering</span>
+          </label>
+        </div>
+
+        <div class="setting-item checkbox-item">
+          <input type="checkbox" id="confirmBeforeOrder" checked>
+          <label for="confirmBeforeOrder">
+            Always Confirm Before Placing Order
+            <span class="setting-hint">Require manual confirmation</span>
+          </label>
+        </div>
+
+        <div class="setting-item checkbox-item">
+          <input type="checkbox" id="saveHistory" checked>
+          <label for="saveHistory">
+            Save Order History
+            <span class="setting-hint">Track your orders and savings</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>🍕 Platform Preferences</h2>
+        
+        <div class="setting-item checkbox-item">
+          <input type="checkbox" id="swiggyEnabled" checked>
+          <label for="swiggyEnabled">Enable Swiggy</label>
+        </div>
+
+        <div class="setting-item checkbox-item">
+          <input type="checkbox" id="zomatoEnabled" checked>
+          <label for="zomatoEnabled">Enable Zomato</label>
+        </div>
+
+        <div class="setting-item checkbox-item">
+          <input type="checkbox" id="blinkitEnabled" checked>
+          <label for="blinkitEnabled">Enable Blinkit</label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>🗑️ Data Management</h2>
+        
+        <div class="setting-item">
+          <button class="danger-btn" id="clearHistory">Clear Order History</button>
+          <p class="setting-hint">Remove all saved order history</p>
+        </div>
+
+        <div class="setting-item">
+          <button class="danger-btn" id="clearChat">Clear Chat History</button>
+          <p class="setting-hint">Remove all AI chat conversations</p>
+        </div>
+
+        <div class="setting-item">
+          <button class="danger-btn" id="resetAll">Reset All Settings</button>
+          <p class="setting-hint">Reset to default configuration</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="options-footer">
+      <div class="footer-content">
+        <button class="save-btn" id="saveSettings">💾 Save Settings</button>
+        <div id="saveStatus" class="status-message"></div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

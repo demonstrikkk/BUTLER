@@ -1,0 +1,11 @@
+<svg width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5CA3E8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="8" fill="url(#grad)"/>
+  <circle cx="24" cy="24" r="16" fill="none" stroke="#F5E6D3" stroke-width="2"/>
+  <text x="24" y="32" font-family="Arial" font-size="24" font-weight="bold" fill="#F5E6D3" text-anchor="middle">🍔</text>
+</svg>

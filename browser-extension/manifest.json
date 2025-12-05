@@ -1,0 +1,78 @@
+{
+  "manifest_version": 3,
+  "name": "BUTLER - AI Food Ordering Assistant",
+  "version": "1.0.0",
+  "description": "Beyond-Automation Utility: Thinking, Learning, Executing, Reflecting",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "scripting",
+    "debugger",
+    "webNavigation",
+    "cookies",
+    "sidePanel"
+  ],
+  
+  "host_permissions": [
+    "https://www.swiggy.com/*",
+    "https://www.zomato.com/*",
+    "https://blinkit.com/*",
+    "https://www.google.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.svg",
+      "48": "icons/icon48.svg",
+      "128": "icons/icon128.svg"
+    },
+    "default_title": "BUTLER Assistant"
+  },
+  
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
+  
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.swiggy.com/*"
+      ],
+      "js": ["content/swiggy-content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.zomato.com/*"
+      ],
+      "js": ["content/zomato-content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://blinkit.com/*"
+      ],
+      "js": ["content/blinkit-content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "devtools_page": "devtools.html",
+  
+  "options_page": "options.html"
+}

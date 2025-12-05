@@ -1,0 +1,237 @@
+/* Blue-Beige Color Palette */
+:root {
+  --primary-blue: #4A90E2;
+  --secondary-blue: #5CA3E8;
+  --dark-blue: #2C5F8D;
+  --light-blue: #E8F4FD;
+  
+  --primary-beige: #F5E6D3;
+  --secondary-beige: #E8D7C3;
+  --dark-beige: #D4C4B0;
+  --light-beige: #FAF7F2;
+  
+  --accent-gold: #D4A574;
+  --text-dark: #2C3E50;
+  --text-light: #5A6C7D;
+  --success-green: #52C41A;
+  --error-red: #F5222D;
+  
+  --shadow-sm: 0 2px 8px rgba(74, 144, 226, 0.1);
+  --shadow-md: 0 4px 16px rgba(74, 144, 226, 0.15);
+  --shadow-lg: 0 8px 24px rgba(74, 144, 226, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  height: 600px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, var(--light-beige) 0%, var(--light-blue) 100%);
+  color: var(--text-dark);
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  gap: 16px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow-md);
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.emoji {
+  font-size: 28px;
+}
+
+.logo h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  opacity: 0.95;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success-green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Quick Actions */
+.quick-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.action-btn {
+  background: white;
+  border: 2px solid var(--primary-beige);
+  border-radius: 10px;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-blue);
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: white;
+  border: none;
+}
+
+.btn-icon {
+  font-size: 20px;
+}
+
+/* Platform Info */
+.platform-info {
+  background: white;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--accent-gold);
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.platform-icon {
+  font-size: 20px;
+}
+
+.platform-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.platform-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.mini-btn {
+  flex: 1;
+  padding: 6px 12px;
+  background: var(--light-blue);
+  border: 1px solid var(--primary-blue);
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--dark-blue);
+}
+
+.mini-btn:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--primary-beige) 0%, var(--secondary-beige) 100%);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--dark-beige);
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark-blue);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.settings-btn,
+.help-btn {
+  flex: 1;
+  padding: 10px;
+  background: white;
+  border: 1px solid var(--dark-beige);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+.settings-btn:hover,
+.help-btn:hover {
+  background: var(--light-beige);
+  border-color: var(--accent-gold);
+  transform: translateY(-1px);
+}
